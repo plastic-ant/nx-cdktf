@@ -1,0 +1,42 @@
+{
+  "name": "@plastic-ant/nx-cdktf",
+  "version": "0.3.6",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/plastic-ant/nx-cdktf"
+  },
+  "keywords": [
+    "nx",
+    "crystal",
+    "terraform",
+    "azure",
+    "aws",
+    "gcp",
+    "cdktf",
+    "cdk",
+    "cloud"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": {
+    "name": "pas-mike",
+    "url": "https://github.com/pas-mike"
+  },
+  "main": "src/index.js",
+  "generators": "./generators.json",
+  "executors": "./executors.json",
+  "devDependencies": {
+    "@nx/devkit": "19.5.4",
+    "json-schema-to-typescript": "^15.0.0",
+    "nx": "19.5.4"
+  },
+  "dependencies": {
+    "@nx/devkit": "19.5.4",
+    "nx": "19.5.4"
+  },
+  "peerDependencies": {
+    "cdktf-cli": "^0.20.8"
+  }
+}

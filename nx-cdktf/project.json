@@ -1,0 +1,51 @@
+{
+  "name": "nx-cdktf",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/nx-cdktf/src",
+  "projectType": "library",
+  "tags": ["#nx-plugin"],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/{projectRoot}",
+        "main": "{projectRoot}/src/index.ts",
+        "tsConfig": "{projectRoot}/tsconfig.lib.json",
+        "assets": ["{projectRoot}/LICENSE", "{projectRoot}/README.md"]
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "{projectRoot}/tsconfig.lib.prd.json"
+        }
+      }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "push": true,
+        "preset": "conventionalcommits",
+        "baseBranch": "main",
+        "tagPrefix": "{projectName}@",
+        "commitMessageFormat": "chore({projectName}): release version {version} [skip ci]",
+        "postTargets": ["build", "npm", "github"]
+      }
+    },
+    "github": {
+      "executor": "@jscutlery/semver:github",
+      "options": {
+        "tag": "{tag}",
+        "notes": "{notes}"
+      }
+    },
+    "npm": {
+      "executor": "ngx-deploy-npm:deploy",
+      "options": {
+        "access": "public",
+        "scope": "plastic-ant",
+        "distFolderPath": "dist/{projectRoot}"
+      }
+    }
+  }
+}

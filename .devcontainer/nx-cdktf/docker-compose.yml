@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  repo:
+    #env_file:
+    #  - .env.local
+    build:
+      context: ../
+      dockerfile: ../.devcontainer/nx-cdktf/dockerfile
+      args:
+        NODE_VARIANT: 20-bullseye
+    volumes:
+      - ${HOME}${USERPROFILE}/.aws:/home/node/.aws
+      - ${HOME}${USERPROFILE}/.ssh:/home/node/.ssh
+      - ../..:/pas-nx-cdktf:cached
+    command: sleep infinity
