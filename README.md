@@ -4,7 +4,7 @@
 [![Npm package version](https://badgen.net/npm/v/@plastic-ant/nx-cdktf)](https://npmjs.com/package/@plastic-ant/nx-cdktf)
 [![Downloads](https://img.shields.io/npm/dm/@plastic-ant/nx-cdktf.svg)](https://npmjs.com/package/@plastic-ant/nx-cdktf)
 
-An Nx (Project Crystal) plugin for developing with the [aws-cdk](https://docs.aws.amazon.com/cdk/latest/guide/home.html)
+An Nx (Project Crystal) plugin for developing with the [cdktf](https://developer.hashicorp.com/terraform/cdktf)
 
 ## Example
 
