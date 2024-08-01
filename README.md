@@ -9,5 +9,3 @@ An Nx (Project Crystal) plugin for developing with the [aws-cdk](https://docs.aw
 ## Example
 
 This repo contains a very basic example to demo how the plugin works and how to pass additional cli arguments [here](https://github.com/plastic-ant/nx-cdktf/tree/main/nx-cdktf-app).
-
-<img src="docs/images/project-dets.png" width="60%" height="auto"/>
